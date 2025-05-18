@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hendry Mwamburi | Data Scientist Portfolio</title>
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .navbar {
+      background-color: #343a40;
+    }
+    .navbar a {
+      color: white !important;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+    .avatar {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 5px solid #ccc;
+      object-fit: cover;
+    }
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      background-color: pink;
+      border-radius: 50%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin: 5px;
+      transition: 0.3s;
+    }
+    .social-icon img {
+      width: 20px;
+      height: 20px;
+    }
+    .social-icon:hover {
+      background-color: #e83e8c;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 🔗 Sticky Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand text-white" href="#">Hendry Mwamburi</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon bg-light"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <!-- All other sections will go here step by step -->
+</main>
+<section id="about" class="py-5 text-center">
+  <div class="container">
+    <h2 class="mb-4">About</h2>
+    <img src="../profile.jpg" alt="Profile Picture" class="avatar mb-4">
+    <div class="mx-auto" style="max-width: 600px;">
+      <p>Hello! I’m a data scientist who believes in using data ethically and creatively to uncover meaningful patterns. With a deep respect for truth and a heart guided by faith, I approach each project with curiosity and conviction.</p>
+      <p>I specialize in machine learning, data storytelling, and building impactful data products that serve real needs. Whether you're here to browse or collaborate, welcome!</p>
+    </div>
+  </div>
+</section>
+<section id="projects" class="py-5 text-center bg-light">
+  <div class="container">
+    <h2 class="mb-5">Projects</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="../Stock market (2).jpg" class="card-img-top" alt="Project 3">
+          <div class="card-body">
+            <h5 class="card-title">Stock Market Analysis</h5>
+            <p class="card-text">This project focuses on analyzing stock market data using Python's Pandas library to gain insights into stock performance, trends, and correlations. 
+                The goal is to utilize data manipulation, analysis, and visualization techniques to provide a comprehensive overview of stock market dynamics.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Blog Post</a>
+            <a href="https://github.com/hendrybones/Stock_market_analysis" class="btn btn-outline-secondary btn-sm">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="../Olympic (3).jpg" class="card-img-top" alt="Project 2">
+          <div class="card-body">
+            <h5 class="card-title">Olympic Analysis</h5>
+            <p class="card-text">This project focuses on analyzing house price data using Python's Pandas library to uncover insights regarding market trends, pricing factors, and regional variations.
+                 The goal is to manipulate and visualize data to better understand the dynamics of the housing market, aiding potential buyers, sellers, and real estate professionals in making informed decisions.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Blog Post</a>
+            <a href="https://github.com/hendrybones/SQL-Olympic-Data-Analysis" class="btn btn-outline-secondary btn-sm">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="../House prices.jpg" class="card-img-top" alt="Project 3">
+          <div class="card-body">
+            <h5 class="card-title">Project 3</h5>
+            <p class="card-text">This project focuses on analyzing house price data using Python's Pandas library to uncover insights regarding market trends, pricing factors, and regional variations. 
+                The goal is to manipulate and visualize data to better understand the dynamics of the housing market, aiding potential buyers, sellers, and real estate professionals in making informed decisions.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Blog Post</a>
+            <a href="https://github.com/hendrybones/House_price_analysis_linear_regression" class="btn btn-outline-secondary btn-sm">Source Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="skills" class="py-5 text-center">
+  <div class="container">
+    <h2 class="mb-5">Skills</h2>
+    <div class="row">
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img src="../python.jpeg" class="card-img-top p-3" alt="Python">
+          <div class="card-body">
+            <h5 class="card-title">Python</h5>
+            <p class="card-text">Proficient in using Python for data cleaning, analysis, machine learning, and automation. 
+                Skilled with libraries like pandas, NumPy, scikit-learn, and matplotlib for efficient data workflows.</p>
+            <a href="#" class="btn btn-link">Link to course or bootcamp</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img src="..//visualizition.png" class="card-img-top p-3" alt="Visualization">
+          <div class="card-body">
+            <h5 class="card-title">Data Visualization</h5>
+            <p class="card-text">Experienced in creating clear and compelling visual stories with tools like Power BI, Matplotlib, Seaborn, Plotly, and Tableau to reveal insights and inform decisions</p>
+            <a href="#" class="btn btn-link">Link to course or bootcamp</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img src="..//sql.png" class="card-img-top p-3" alt="SQL">
+          <div class="card-body">
+            <h5 class="card-title">SQL</h5>
+            <p class="card-text">Strong command of SQL for querying, joining, and managing relational databases. Adept at using SQL for data extraction, transformation, and aggregation.</p>
+            <a href="#" class="btn btn-link">Link to course or bootcamp</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img src="images/skills/4.png" class="card-img-top p-3" alt="Storytelling">
+          <div class="card-body">
+            <h5 class="card-title">Data Storytelling</h5>
+            <p class="card-text">Skilled in synthesizing complex data into actionable narratives. 
+                Able to communicate insights clearly to both technical and non-technical audiences using visuals and storytelling principles.</p>
+            <a href="#" class="btn btn-link">Link to course or bootcamp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="contact" class="py-5 text-white" style="background-color: #212529;">
+  <div class="container text-center">
+    <h2 class="mb-4">Contact Me</h2>
+    <div class="mb-3">
+      <p><img src="../gmail.png" width="20"> boneshendry@gmail.com</p>
+      <p><img src="..//phone.png" width="20"> 0791520630</p>
+    </div>
+    <div>
+      <a href="#" class="social-icon" title="LinkedIn"><img src="../linkeind.png" alt=""></a>
+      <a href="#" class="social-icon" title="Twitter"><img src="../twitter_5968830.png" alt=""></a>
+      <a href="#" class="social-icon" title="GitHub"><img src="../github.png" alt=""></a>
+      <!-- <a href="#" class="social-icon" title="Medium"><img src="icons/medium.png" alt=""></a>
+      <a href="#" class="social-icon" title="YouTube"><img src="icons/youtube.png" alt=""></a> -->
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
