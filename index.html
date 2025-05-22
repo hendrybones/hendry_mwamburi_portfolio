@@ -27,8 +27,8 @@
     .avatar {
       width: 200px;
       height: 200px;
-      border-radius: 50%;
       border: 5px solid #ccc;
+      border-radius: 50%; /* Circular shape for profile picture */
       object-fit: cover;
     }
     .social-icon {
@@ -75,7 +75,7 @@
     /* Styles for the about section */
     #about {
       min-height: 100vh;
-      background-image: url('./About\ section.jpg');
+      background-image: url('./About section.jpg');
       background-size: cover;
       background-position: center;
       position: relative;
@@ -95,6 +95,24 @@
       position: relative;
       z-index: 2;
     }
+    /* Styles for work experience and education sections */
+    #work-experience, #education {
+      padding: 5rem 0;
+      background-color: #f8f9fa;
+    }
+    #work-experience .card, #education .card {
+      border: none;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    #work-experience .card-body, #education .card-body {
+      text-align: left;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 767px) {
+      .avatar {
+        margin: 0 auto 1.5rem; /* Center image on small screens */
+      }
+    }
   </style>
 </head>
 <body>
@@ -111,8 +129,10 @@
         <li class="nav-item"><a class="nav-link" href="#landing">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-         <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li> 
+        <li class="nav-item"><a class="nav-link" href="#work-experience">Work Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
         <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -131,13 +151,19 @@
   </section>
 
   <!-- 👤 About Section -->
-  <section id="about" class="py-5 text-center">
+  <section id="about" class="py-5">
     <div class="container">
-      <h2 class="mb-4">About</h2>
-      <img src="./profile.jpg" alt="Profile Picture" class="avatar mb-4">
-      <div class="mx-auto" style="max-width: 600px;">
-        <p>Hi, I’m Hendry Mwamburi, a data scientist passionate about finding the stories hidden in numbers. I love turning messy data into clear insights that help people and businesses make smarter decisions.</p>
-        <p>I work with tools like Python, SQL, Power BI, and AWS to build models, dashboards, and solutions that make a real impact. Beyond the code, I value meaningful, ethical, and purpose-driven work. I'm always learning, growing, and helping others grow too.</p>
+      <h2 class="mb-4 text-center">About</h2>
+      <div class="row align-items-center">
+        <div class="col-md-5 text-center">
+          <img src="./profile.jpg" alt="Profile Picture" class="avatar mb-4">
+        </div>
+        <div class="col-md-7">
+          <div class="text-start">
+            <p>Hi, I’m Hendry Mwamburi, a data scientist passionate about finding the stories hidden in numbers. I love turning messy data into clear insights that help people and businesses make smarter decisions.</p>
+            <p>I work with tools like Python, SQL, Power BI, and AWS to build models, dashboards, and solutions that make a real impact. Beyond the code, I value meaningful, ethical, and purpose-driven work. I'm always learning, growing, and helping others grow too.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -147,7 +173,6 @@
     <div class="container">
       <h2 class="mb-5">Projects</h2>
       <div class="row">
-
         <!-- Project 1 -->
         <div class="col-md-4 mb-4">
           <div class="card h-100">
@@ -160,7 +185,6 @@
             </div>
           </div>
         </div>
-
         <!-- Project 2 -->
         <div class="col-md-4 mb-4">
           <div class="card h-100">
@@ -173,7 +197,6 @@
             </div>
           </div>
         </div>
-
         <!-- Project 3 -->
         <div class="col-md-4 mb-4">
           <div class="card h-100">
@@ -186,7 +209,129 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- 💼 Work Experience Section -->
+  <section id="work-experience" class="py-5 text-center">
+    <div class="container">
+      <h2 class="mb-5">Work Experience</h2>
+      <div class="row">
+        <!-- Job 1 -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Data Scientist</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Tech Solutions Ltd., Nairobi, Kenya</h6>
+              <p class="card-text text-muted">January 2023 – Present</p>
+              <ul class="text-start">
+                <li>Developed machine learning models using Python (scikit-learn, TensorFlow) to predict customer churn, improving retention by 15%.</li>
+                <li>Created interactive Power BI dashboards to visualize sales trends, enabling data-driven decisions for the marketing team.</li>
+                <li>Automated data cleaning processes with Pandas, reducing processing time by 30%.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Job 2 -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Junior Data Analyst</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Data Insights Co., Mombasa, Kenya</h6>
+              <p class="card-text text-muted">June 2021 – December 2022</p>
+              <ul class="text-start">
+                <li>Analyzed customer data using SQL to identify purchasing patterns, contributing to a 10% increase in sales.</li>
+                <li>Designed visualizations with Tableau to present quarterly performance reports to stakeholders.</li>
+                <li>Collaborated with cross-functional teams to streamline data collection processes.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🎓 Education Section -->
+  <section id="education" class="py-5 text-center bg-light">
+    <div class="container">
+      <h2 class="mb-5">Education</h2>
+      <div class="row">
+        <!-- Education 1 -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Bachelor of Science in Data Science</h5>
+              <h6 class="card-subtitle mb-2 text-muted">University of Nairobi, Nairobi, Kenya</h6>
+              <p class="card-text text-muted">September 2017 – May 2021</p>
+              <p class="text-start">Specialized in machine learning, statistical analysis, and data visualization. Graduated with First Class Honors.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Education 2 -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Certificate in Power BI and AWS</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Online Bootcamp, Coursera</h6>
+              <p class="card-text text-muted">March 2022 – June 2022</p>
+              <p class="text-start">Completed advanced training in Power BI for data visualization and AWS for cloud-based data solutions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🧠 Skills Section -->
+  <section id="skills" class="py-5 text-center">
+    <div class="container">
+      <h2 class="mb-5">Skills</h2>
+      <div class="row">
+        <!-- Skill 1 -->
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="./python.jpeg" class="card-img-top p-3" alt="Python">
+            <div class="card-body">
+              <h5 class="card-title">Python</h5>
+              <p class="card-text">Proficient in Python for data cleaning, analysis, machine learning, and automation. Experienced with Pandas, NumPy, scikit-learn, and Matplotlib.</p>
+              <a href="#" class="btn btn-link">Link to course or bootcamp</a>
+            </div>
+          </div>
+        </div>
+        <!-- Skill 2 -->
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="./visualizition.png" class="card-img-top p-3" alt="Data Visualization">
+            <div class="card-body">
+              <h5 class="card-title">Data Visualization</h5>
+              <p class="card-text">Skilled in Power BI, Matplotlib, Seaborn, Plotly, and Tableau for turning data into clear visual stories.</p>
+              <a href="#" class="btn btn-link">Link to course or bootcamp</a>
+            </div>
+          </div>
+        </div>
+        <!-- Skill 3 -->
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="./sql.png" class="card-img-top p-3" alt="SQL">
+            <div class="card-body">
+              <h5 class="card-title">SQL</h5>
+              <p class="card-text">Strong SQL skills for data querying, aggregation, and relational database management.</p>
+              <a href="#" class="btn btn-link">Link to course or bootcamp</a>
+            </div>
+          </div>
+        </div>
+        <!-- Skill 4 -->
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="./story telling.jpeg" class="card-img-top p-3" alt="Data Storytelling">
+            <div class="card-body">
+              <h5 class="card-title">Data Storytelling</h5>
+              <p class="card-text">Expert at crafting clear narratives from complex data for both technical and non-technical audiences.</p>
+              <a href="#" class="btn btn-link">Link to course or bootcamp</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -216,65 +361,6 @@
             </div>
           </div>
         </div>
-        <!-- Add more blog posts as needed -->
-      </div>
-    </div>
-  </section>
-
-  <!-- 🧠 Skills Section -->
-  <section id="skills" class="py-5 text-center">
-    <div class="container">
-      <h2 class="mb-5">Skills</h2>
-      <div class="row">
-
-        <!-- Skill 1 -->
-        <div class="col-md-3 mb-4">
-          <div class="card h-100">
-            <img src="./python.jpeg" class="card-img-top p-3" alt="Python">
-            <div class="card-body">
-              <h5 class="card-title">Python</h5>
-              <p class="card-text">Proficient in Python for data cleaning, analysis, machine learning, and automation. Experienced with Pandas, NumPy, scikit-learn, and Matplotlib.</p>
-              <a href="#" class="btn btn-link">Link to course or bootcamp</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 2 -->
-        <div class="col-md-3 mb-4">
-          <div class="card h-100">
-            <img src="./visualizition.png" class="card-img-top p-3" alt="Data Visualization">
-            <div class="card-body">
-              <h5 class="card-title">Data Visualization</h5>
-              <p class="card-text">Skilled in Power BI, Matplotlib, Seaborn, Plotly, and Tableau for turning data into clear visual stories.</p>
-              <a href="#" class="btn btn-link">Link to course or bootcamp</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 3 -->
-        <div class="col-md-3 mb-4">
-          <div class="card h-100">
-            <img src="./sql.png" class="card-img-top p-3" alt="SQL">
-            <div class="card-body">
-              <h5 class="card-title">SQL</h5>
-              <p class="card-text">Strong SQL skills for data querying, aggregation, and relational database management.</p>
-              <a href="#" class="btn btn-link">Link to course or bootcamp</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill 4 -->
-        <div class="col-md-3 mb-4">
-          <div class="card h-100">
-            <img src="./story telling.jpeg" class="card-img-top p-3" alt="Data Storytelling">
-            <div class="card-body">
-              <h5 class="card-title">Data Storytelling</h5>
-              <p class="card-text">Expert at crafting clear narratives from complex data for both technical and non-technical audiences.</p>
-              <a href="#" class="btn btn-link">Link to course or bootcamp</a>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
