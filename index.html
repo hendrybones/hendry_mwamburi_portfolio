@@ -4,113 +4,145 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hendry Mwamburi | Data Scientist Portfolio</title>
-
+  <!-- Favicon for branding -->
+  <link rel="icon" type="image/png" href="./favicon.png">
   <!-- Bootstrap CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts for modern typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   
   <style>
     html {
       scroll-behavior: smooth;
     }
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f7fc;
     }
     .navbar {
-      background-color: #343a40;
+      background: linear-gradient(90deg, #1a2a6c, #b21f1f); /* Gradient for professional look */
+      padding: 1rem 0;
     }
     .navbar a {
       color: white !important;
+      font-weight: 400;
+      transition: color 0.3s ease;
     }
     .navbar a:hover {
-      text-decoration: underline;
+      color: #ffd700 !important; /* Gold hover for emphasis */
+      text-decoration: none;
     }
     .avatar {
       width: 200px;
       height: 200px;
-      border: 5px solid #ccc;
-      border-radius: 50%; /* Circular shape for profile picture */
+      border: 5px solid #fff;
+      border-radius: 50%;
       object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
     .social-icon {
-      width: 40px;
-      height: 40px;
-      background-color: pink;
+      width: 45px;
+      height: 45px;
+      background-color: #ff6f91;
       border-radius: 50%;
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      margin: 5px;
-      transition: 0.3s;
+      margin: 8px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
     .social-icon img {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
     }
     .social-icon:hover {
       background-color: #e83e8c;
+      transform: scale(1.1);
     }
-    /* Styles for the hero section */
+    /* Hero Section */
     #landing {
       min-height: 100vh;
-      background-image: url('./landing.jpg');
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./landing.jpg');
       background-size: cover;
       background-position: center;
-      position: relative;
       color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
-    #landing::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.3);
-      z-index: 1;
+    #landing .btn-primary {
+      background-color: #1a2a6c;
+      border: none;
+      padding: 0.75rem 2rem;
+      transition: transform 0.3s ease;
     }
-    #landing > div {
-      position: relative;
-      z-index: 2;
+    #landing .btn-primary:hover {
+      background-color: #b21f1f;
+      transform: translateY(-3px);
     }
-    /* Styles for the about section */
+    /* Elevator Pitch Section */
+    #elevator-pitch {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      text-align: center;
+    }
+    #elevator-pitch .btn {
+      background-color: #1a2a6c;
+      color: white;
+      padding: 0.75rem 2rem;
+      transition: transform 0.3s ease;
+    }
+    #elevator-pitch .btn:hover {
+      background-color: #b21f1f;
+      transform: translateY(-3px);
+    }
+    /* About Section */
     #about {
       min-height: 100vh;
-      background-image: url('./About section.jpg');
+      background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('./About section.jpg');
       background-size: cover;
       background-position: center;
-      position: relative;
+      padding: 5rem 0;
       color: #212529;
     }
-    #about::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(248, 249, 250, 0.7);
-      z-index: 1;
-    }
-    #about > div {
-      position: relative;
-      z-index: 2;
-    }
-    /* Styles for work experience and education sections */
-    #work-experience, #education {
+    /* Projects, Work Experience, Education, Skills, Blog */
+    #projects, #work-experience, #education, #skills, #blog {
       padding: 5rem 0;
-      background-color: #f8f9fa;
+      background-color: #fff;
     }
-    #work-experience .card, #education .card {
+    #projects .card, #work-experience .card, #education .card, #skills .card {
       border: none;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    #work-experience .card-body, #education .card-body {
-      text-align: left;
+    #projects .card:hover, #work-experience .card:hover, #education .card:hover, #skills .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     }
-    /* Responsive adjustments */
+    #projects .btn, #skills .btn {
+      transition: transform 0.3s ease;
+    }
+    #projects .btn:hover, #skills .btn:hover {
+      transform: translateY(-3px);
+    }
+    /* Contact Section */
+    #contact {
+      padding: 5rem 0;
+      background: linear-gradient(90deg, #1a2a6c, #b21f1f);
+      color: white;
+    }
+    /* Responsive Adjustments */
     @media (max-width: 767px) {
       .avatar {
-        margin: 0 auto 1.5rem; /* Center image on small screens */
+        margin: 0 auto 2rem;
+      }
+      .navbar-nav {
+        text-align: center;
+      }
+      #landing h1 {
+        font-size: 2.5rem;
       }
     }
   </style>
@@ -127,6 +159,7 @@
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#landing">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#elevator-pitch">Pitch</a></li>
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
         <li class="nav-item"><a class="nav-link" href="#work-experience">Work Experience</a></li>
@@ -146,7 +179,18 @@
     <div>
       <h1 class="display-4 fw-bold">Hendry Mwamburi</h1>
       <p class="lead">Data Scientist | Machine Learning Engineer | Power BI Developer</p>
-      <a href="#about" class="btn btn-primary btn-lg mt-3">Learn More</a>
+      <a href="#elevator-pitch" class="btn btn-primary btn-lg mt-3">Discover My Work</a>
+      <a href="./resume.pdf" class="btn btn-outline-light btn-lg mt-3 ms-2" download>Download Resume</a>
+    </div>
+  </section>
+
+  <!-- 🎤 Elevator Pitch Section -->
+  <section id="elevator-pitch" class="text-center">
+    <div class="container">
+      <h2 class="mb-4">My Elevator Pitch</h2>
+      <p class="lead mb-4">Learn why I’m passionate about transforming data into actionable insights in just 30 seconds!</p>
+      <a href="https://www.youtube.com/watch?v=your-elevator-pitch-video" class="btn btn-primary">Watch My Pitch</a>
+      <p class="mt-3"><a href="./elevator-pitch.txt" class="text-muted">Read the transcript</a></p>
     </div>
   </section>
 
@@ -162,6 +206,7 @@
           <div class="text-start">
             <p>Hi, I’m Hendry Mwamburi, a data scientist passionate about finding the stories hidden in numbers. I love turning messy data into clear insights that help people and businesses make smarter decisions.</p>
             <p>I work with tools like Python, SQL, Power BI, and AWS to build models, dashboards, and solutions that make a real impact. Beyond the code, I value meaningful, ethical, and purpose-driven work. I'm always learning, growing, and helping others grow too.</p>
+            <a href="https://medium.com/@hendrymwamburi" class="btn btn-outline-primary btn-sm mt-2">Read My Articles on Medium</a>
           </div>
         </div>
       </div>
@@ -222,13 +267,15 @@
         <div class="col-md-6 mb-4">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title">Data Scientist</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Tech Solutions Ltd., Nairobi, Kenya</h6>
+              <h5 class="card-title">Power BI Developer & Architect</h5>
+              <h6 class="card-subtitle mb-2 text-muted">HAE Group, Nairobi, Kenya</h6>
               <p class="card-text text-muted">January 2023 – Present</p>
               <ul class="text-start">
-                <li>Developed machine learning models using Python (scikit-learn, TensorFlow) to predict customer churn, improving retention by 15%.</li>
-                <li>Created interactive Power BI dashboards to visualize sales trends, enabling data-driven decisions for the marketing team.</li>
+                <li>Developed an automated revenue report in Power BI, replacing manual Excel-based tracking. This improved operational efficiency by 20%.</li>
+                <li>Redesigned a master dashboard consolidating data from multiple sources, increasing accuracy from 68% to 97% and improving efficiency by 10% by streamlining multiple reports into a single global report.</li>
                 <li>Automated data cleaning processes with Pandas, reducing processing time by 30%.</li>
+                <li>Led the development of a Power BI report for tracking quotes and bookings, resulting in a 30% increase in conversion rates and a 10% rise in revenue.</li>
+                <li>Built a Power BI report to monitor the implementation of automated booking systems, providing key insights for stakeholders to make informed decisions.</li>
               </ul>
             </div>
           </div>
@@ -237,13 +284,31 @@
         <div class="col-md-6 mb-4">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title">Junior Data Analyst</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Data Insights Co., Mombasa, Kenya</h6>
-              <p class="card-text text-muted">June 2021 – December 2022</p>
+              <h5 class="card-title">Data Analyst</h5>
+              <h6 class="card-subtitle mb-2 text-muted">National Social Security Fund (NSSF), Nairobi, Kenya</h6>
+              <p class="card-text text-muted">July 2022 – December 2023</p>
               <ul class="text-start">
-                <li>Analyzed customer data using SQL to identify purchasing patterns, contributing to a 10% increase in sales.</li>
-                <li>Designed visualizations with Tableau to present quarterly performance reports to stakeholders.</li>
-                <li>Collaborated with cross-functional teams to streamline data collection processes.</li>
+                <li>Analyzed employee task data using Excel, providing insights for managers to enhance efficiency by 17%. This also contributed to a more structured, competence-based appraisal system.</li>
+                <li>Developed a Python (Pandas) and Power BI-based reporting system to streamline the tracking and analysis of client concerns, reducing unresolved issues by 15%.</li>
+                <li>Conducted system workflow analysis, identifying inefficiencies and proposing solutions to enhance operational effectiveness.</li>
+                <li>Created a Power BI dashboard to visualize employee task data, enabling managers to make data-driven decisions and improve team performance.</li>
+                <li>Designed Excel-based reports and interactive Power BI dashboards, delivering key performance insights to stakeholders and improving strategic decision-making.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Job 3 -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Data Analyst Intern</h5>
+              <h6 class="card-subtitle mb-2 text-muted">KUSCCO LMI, Nairobi, Kenya</h6>
+              <p class="card-text text-muted">January 2023 – Present</p>
+              <ul class="text-start">
+                <li>Designed interactive Power BI dashboards to track key performance metrics, leading to a 19% improvement in operational efficiency.</li>
+                <li>Assisted in developing an ETL pipeline using Python and SQL to streamline data workflows, significantly enhancing efficiency.</li>
+                <li>Wrote and optimized SQL queries to extract, clean, and analyze large datasets, improving data accessibility and decision-making speed.</li>
+                <li>Utilized Excel functions (VLOOKUP, Pivot Tables, Power Query, and Macros) to automate data analysis and generate meaningful insights.</li>
               </ul>
             </div>
           </div>
@@ -261,10 +326,10 @@
         <div class="col-md-6 mb-4">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title">Bachelor of Science in Data Science</h5>
-              <h6 class="card-subtitle mb-2 text-muted">University of Nairobi, Nairobi, Kenya</h6>
-              <p class="card-text text-muted">September 2017 – May 2021</p>
-              <p class="text-start">Specialized in machine learning, statistical analysis, and data visualization. Graduated with First Class Honors.</p>
+              <h5 class="card-title">Data Science</h5>
+              <h6 class="card-subtitle mb-2 text-muted">ALX ACADEMY Online</h6>
+              <p class="card-text text-muted">March 2025 – Present</p>
+              <p class="text-start">Currently pursuing the Data Science program at ALX Academy.</p>
             </div>
           </div>
         </div>
@@ -272,10 +337,21 @@
         <div class="col-md-6 mb-4">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title">Certificate in Power BI and AWS</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Online Bootcamp, Coursera</h6>
-              <p class="card-text text-muted">March 2022 – June 2022</p>
-              <p class="text-start">Completed advanced training in Power BI for data visualization and AWS for cloud-based data solutions.</p>
+              <h5 class="card-title">Bachelor of Business Information Technology</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Taita Taveta University, Nairobi, Kenya</h6>
+              <p class="card-text text-muted">September 2016 – May 2021</p>
+              <p class="text-start">Graduated with Second Class Honors.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Education 3 -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Kenya Certificate of Secondary Education</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Mwakitawa Secondary School</h6>
+              <p class="card-text text-muted">February 2012 – November 2015</p>
+              <p class="text-start">Completed Secondary School Education.</p>
             </div>
           </div>
         </div>
@@ -295,7 +371,7 @@
             <div class="card-body">
               <h5 class="card-title">Python</h5>
               <p class="card-text">Proficient in Python for data cleaning, analysis, machine learning, and automation. Experienced with Pandas, NumPy, scikit-learn, and Matplotlib.</p>
-              <a href="#" class="btn btn-link">Link to course or bootcamp</a>
+              <a href="https://www.coursera.org/certificate/python" class="btn btn-link">View Certification</a>
             </div>
           </div>
         </div>
@@ -305,8 +381,8 @@
             <img src="./visualizition.png" class="card-img-top p-3" alt="Data Visualization">
             <div class="card-body">
               <h5 class="card-title">Data Visualization</h5>
-              <p class="card-text">Skilled in Power BI, Matplotlib, Seaborn, Plotly, and Tableau for turning data into clear visual stories.</p>
-              <a href="#" class="btn btn-link">Link to course or bootcamp</a>
+              <p class="card-text">Skilled in Power BI, Matplotlib, Seaborn, and Plotly for turning data into clear visual stories.</p>
+              <a href="https://www.coursera.org/certificate/powerbi" class="btn btn-link">View Certification</a>
             </div>
           </div>
         </div>
@@ -317,7 +393,7 @@
             <div class="card-body">
               <h5 class="card-title">SQL</h5>
               <p class="card-text">Strong SQL skills for data querying, aggregation, and relational database management.</p>
-              <a href="#" class="btn btn-link">Link to course or bootcamp</a>
+              <a href="https://www.coursera.org/certificate/sql" class="btn btn-link">View Certification</a>
             </div>
           </div>
         </div>
@@ -328,7 +404,7 @@
             <div class="card-body">
               <h5 class="card-title">Data Storytelling</h5>
               <p class="card-text">Expert at crafting clear narratives from complex data for both technical and non-technical audiences.</p>
-              <a href="#" class="btn btn-link">Link to course or bootcamp</a>
+              <a href="https://www.linkedin.com/learning/data-storytelling" class="btn btn-link">View Course</a>
             </div>
           </div>
         </div>
@@ -362,11 +438,12 @@
           </div>
         </div>
       </div>
+      <a href="https://medium.com/@hendrymwamburi" class="btn btn-primary mt-3">More on Medium</a>
     </div>
   </section>
 
   <!-- 📞 Contact Section -->
-  <section id="contact" class="py-5 text-white" style="background-color: #212529;">
+  <section id="contact" class="py-5 text-white">
     <div class="container text-center">
       <h2 class="mb-4">Contact Me</h2>
       <div class="mb-3">
@@ -374,9 +451,9 @@
         <p><img src="./phone.png" width="20"> 0791520630</p>
       </div>
       <div>
-        <a href="https://www.linkedin.com/in/hendry-mwamburi-a22658351/" class="social-icon" title="LinkedIn"><img src="./linkeind.png" alt=""></a>
-        <a href="#" class="social-icon" title="Twitter"><img src="./twitter_5968830.png" alt=""></a>
-        <a href="https://github.com/hendrybones" class="social-icon" title="GitHub"><img src="./github.png" alt=""></a>
+        <a href="https://www.linkedin.com/in/hendry-mwamburi-a22658351/" class="social-icon" title="LinkedIn"><img src="./linkeind.png" alt="LinkedIn"></a>
+        <a href="#" class="social-icon" title="Twitter"><img src="./twitter_5968830.png" alt="Twitter"></a>
+        <a href="https://github.com/hendrybones" class="social-icon" title="GitHub"><img src="./github.png" alt="GitHub"></a>
       </div>
     </div>
   </section>
